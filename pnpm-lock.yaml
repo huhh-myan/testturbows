@@ -48,9 +48,12 @@ importers:
 
   apps/http-server:
     dependencies:
-      '@repo/db':
+      '@repo/db2':
         specifier: workspace:*
-        version: link:../../packages/db
+        version: link:../../packages/db2
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
       express:
         specifier: ^5.2.1
         version: 5.2.1
@@ -64,6 +67,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/db2':
+        specifier: workspace:*
+        version: link:../../packages/db2
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -101,9 +107,9 @@ importers:
 
   apps/ws-server:
     dependencies:
-      '@repo/db':
+      '@repo/db2':
         specifier: workspace:*
-        version: link:../../packages/db
+        version: link:../../packages/db2
       ws:
         specifier: ^8.20.0
         version: 8.20.0
@@ -115,7 +121,7 @@ importers:
         specifier: ^8.18.1
         version: 8.18.1
 
-  packages/db:
+  packages/db2:
     dependencies:
       '@prisma/adapter-neon':
         specifier: ^7.8.0

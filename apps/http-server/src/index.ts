@@ -1,5 +1,5 @@
 // import { prisma } from "@repo/db";
-import prismaClient from "@repo/db";
+import prismaClient from "@repo/db2";
 import express from "express";
 
 
@@ -9,6 +9,9 @@ const app = express();
 app.get("/",async (req, res)=>{
 
     try{
+        console.log("cwd:", process.cwd());
+        console.log("DATABASE_URL exists:", !!process.env.DATABASE_URL);
+        
         const user = await prismaClient.user.create({
             data:{
                 name: "Kyle HTTP-server",

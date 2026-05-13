@@ -5,15 +5,16 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
+
 model User {
-  id Int @unique @default(autoincrement())
+  id Int  @default(autoincrement()) @unique
   name String
   age Int
 }

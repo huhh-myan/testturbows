@@ -1,5 +1,5 @@
 import { WebSocketServer } from "ws";
-import prismaClient from "@repo/db";
+import prismaClient from "@repo/db2";
 const port = 3001;
 const wss = new WebSocketServer({port: port});
 
