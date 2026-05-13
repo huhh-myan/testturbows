@@ -17,8 +17,8 @@
     "@types/express": "^5.0.6"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "@repo/db": "workspace:*"
+    "@repo/db2": "workspace:*",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
   }
-  
 }

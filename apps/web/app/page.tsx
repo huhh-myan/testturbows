@@ -1,7 +1,7 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
-import prismaClient from "@repo/db";
+import prismaClient from "@repo/db2";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -20,7 +20,11 @@ const ThemeImage = (props: Props) => {
 };
 
 export default async function Home() {
-  const user = await prismaClient.user.findFirst();
+  const user = await prismaClient.user.findFirst({
+    where:{
+      id: 1
+    }
+  });
   return (
     <div>
       <h1>{user?.name}</h1>
