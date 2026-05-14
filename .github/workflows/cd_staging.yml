@@ -16,11 +16,12 @@ jobs:
         run: echo "CHECKING PUSH AGAIN"
       - name: saving private key to SERVER and changing permission
         run: |
-          echo "${{ secrets.SSH_KEY }}" > ~/ssh_key
-          chmod 600 ~/ssh_key
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/ssh_key
+          chmod 600 ~/.ssh/ssh_key
       - name: Adding server to known hosts
         run: |
-          mkdir -p ~/.ssh
+          ls ~/.ssh
           ssh-keyscan -H 52.64.144.188 >> ~/.ssh/known_hosts
       - name: sshing to server
         run: ssh -i ~/ssh_key ubuntu@52.64.188.144 "ls"
