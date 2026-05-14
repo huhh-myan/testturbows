@@ -28,12 +28,12 @@ jobs:
           head -n 1 ~/.ssh/ssh_key
           tail -n 1 ~/.ssh/ssh_key
           ssh-keygen -y -f ~/.ssh/ssh_key > /dev/null
-      - name: sshing to server
-        run: |
-          ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
+      - name: sshing to server and performing actions
+        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
           export PATH=/home/ubuntu/.nvm/versions/node/v24.15.0/bin:\$PATH && 
           cd testturbows && 
-          pnpm install
-          pnpm build
+          git pull &&
+          pnpm install &&
+          pnpm build &&
           pm2 restart http-server ws-server fe-server
           "
