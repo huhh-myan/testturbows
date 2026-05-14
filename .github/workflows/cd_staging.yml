@@ -10,7 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout pipeline
         run: echo "hi"
-      - name: DOnot know
+      - name: Donot know
         run: echo "CHECKING PUSH AGAIN"
+      - name: saving private key to SERVER
+        run: echo "${{ secrets.SSH_KEY }}" &> ~/ssh_key
+      - name: sshing to server
+        run: ssh -i ~/ssh_key ubuntu@52.64.188.144
+      - name: list directory
+        run: ls 
