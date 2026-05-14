@@ -29,4 +29,9 @@ jobs:
           tail -n 1 ~/.ssh/ssh_key
           ssh-keygen -y -f ~/.ssh/ssh_key > /dev/null
       - name: sshing to server
-        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "export PATH=/home/ubuntu/.nvm/versions/node/v24.15.0/bin:\$PATH && pnpm -v && node -v"
+        run: |
+          ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
+          export PATH=/home/ubuntu/.nvm/versions/node/v24.15.0/bin:\$PATH && 
+          pnpm -v && 
+          node -v
+          "
