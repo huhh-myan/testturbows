@@ -1,0 +1,11 @@
+name: Deploy to staging
+on:
+    push:
+        branches:
+            -"main"
+jobs:
+    build:
+        runs-on: ubuntu
+        steps:
+            -   name: everything ig
+                run: echo "hi";
