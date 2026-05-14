@@ -27,6 +27,7 @@ export default async function Home() {
   });
   return (
     <div >
+      <p>this is the basic turborepo with prsima package and cd setup, the prisma isnt singleton, and the cd is full basic LOL</p>
       <h1>UserName: {user?.name}</h1>
       <h1>Age: {user?.age}</h1>
     </div>
