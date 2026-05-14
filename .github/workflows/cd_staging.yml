@@ -1,11 +1,11 @@
 name: Deploy to staging
 on:
     push:
-     branches:
-            -"main"
+        branches:
+            -main
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: everything ig
-              run: echo "hi";
+            -   name: everything ig
+                run: echo "hi";
