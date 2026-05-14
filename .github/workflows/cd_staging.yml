@@ -31,12 +31,7 @@ jobs:
       - name: sshing to server
         run: |
           ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
-            whoami
-            echo PATH=\$PATH
-            which node 
-            which pnpm 
-            source ~/.bashrc
-            which node || true
-            which pnpm || true
+            source ~/.bashrc &&
+            node -v &&
             pnpm --version
             "
