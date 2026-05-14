@@ -35,6 +35,9 @@ jobs:
             echo PATH=\$PATH
             which node || true
             which pnpm || true
+            source ~/.bashrc
+            which node || true
+            which pnpm || true
             ls testturbows
             cd testturbows
             pnpm --version
