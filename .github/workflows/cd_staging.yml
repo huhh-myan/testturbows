@@ -24,4 +24,4 @@ jobs:
           ls ~/.ssh
           ssh-keyscan -H 52.64.144.188 >> ~/.ssh/known_hosts
       - name: sshing to server
-        run: ssh -i ~/ssh_key ubuntu@52.64.188.144 "ls"
+        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "ls"
