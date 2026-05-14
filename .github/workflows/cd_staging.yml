@@ -14,9 +14,13 @@ jobs:
         run: echo "hi"
       - name: Donot know
         run: echo "CHECKING PUSH AGAIN"
-      - name: saving private key to SERVER
-        run: echo "${{ secrets.SSH_KEY }}" &> ~/ssh_key
+      - name: saving private key to SERVER and changing permission
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > ~/ssh_key
+          chmod 600 ~/ssh_key
+      - name: Adding server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 52.64.144.188 >> ~/.ssh/known_hosts
       - name: sshing to server
-        run: ssh -i ~/ssh_key ubuntu@52.64.188.144
-      - name: list directory
-        run: ls 
+        run: ssh -i ~/ssh_key ubuntu@52.64.188.144 "ls"
