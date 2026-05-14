@@ -29,4 +29,13 @@ jobs:
           tail -n 1 ~/.ssh/ssh_key
           ssh-keygen -y -f ~/.ssh/ssh_key > /dev/null
       - name: sshing to server
-        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "ls testturbows"
+        run: |
+          ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
+            whoami
+            echo PATH=\$PATH
+            which node || true
+            which pnpm || true
+            ls testturbows
+            cd testturbows
+            pnpm --version
+            "
