@@ -33,12 +33,10 @@ jobs:
           ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "
             whoami
             echo PATH=\$PATH
-            which node || true
-            which pnpm || true
+            which node 
+            which pnpm 
             source ~/.bashrc
             which node || true
             which pnpm || true
-            ls testturbows
-            cd testturbows
             pnpm --version
             "
