@@ -29,4 +29,4 @@ jobs:
           tail -n 1 ~/.ssh/ssh_key
           ssh-keygen -y -f ~/.ssh/ssh_key > /dev/null
       - name: sshing to server
-        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "cd testturbows && pnpm install && pnpm run build && pm2 restart http-server fe-server ws-server"
+        run: ssh -i ~/.ssh/ssh_key ubuntu@52.64.188.144 "ls testturbows"
