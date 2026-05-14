@@ -1,16 +1,12 @@
-
-
-name: "Deploy embed script"
-
+name: Deploy to staging
 on:
-  push:
-    branches:
-      - main
-      
+    push:
+        branches:
+            -main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: trying pipeline
-        run: echo "hi"
+    deploy:
+        runs-on: ubuntu-latest
+    
+        steps:
+            -   name: everything ig
+                run: echo "hi";
