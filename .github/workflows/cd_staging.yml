@@ -17,7 +17,7 @@ jobs:
       - name: saving private key to SERVER and changing permission
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/ssh_key
+          printf '%s\n' "${{ secrets.SSH_KEY }}" > ~/.ssh/ssh_key
           chmod 600 ~/.ssh/ssh_key
       - name: Adding server to known hosts
         run: |
