@@ -1,12 +1,17 @@
-name: Deploy to staging
+name: "Deploy embed script"
+
 on:
-    push:
-        branches:
-            -main
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/embeds/core/**"
+  workflow_dispatch:
+
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-    
-        steps:
-            -   name: everything ig
-                run: echo "hi";
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        run: echo "hi"
