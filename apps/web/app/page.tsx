@@ -27,8 +27,8 @@ export default async function Home() {
   });
   return (
     <div>
-      <h1>{user?.name}</h1>
-      <h1>{user?.age}</h1>
+      <h1>UserName: {user?.name}</h1>
+      <h1>Age: {user?.age}</h1>
     </div>
   );
 }
