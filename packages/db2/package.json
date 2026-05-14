@@ -24,7 +24,7 @@
   "exports":{
     ".":{
       "import": "./dist/src/index.js",
-      "types": "./dist/src/index.d.ts"
+      "types": "./dist/src/generated/prisma/models/User.d.ts"
     }
   }
 }
